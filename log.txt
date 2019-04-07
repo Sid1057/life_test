@@ -1,0 +1,22 @@
+flake8 *.py modules/*.py tests/*.py
+python3 ./app.py
+
+Prev. state:   set()
+Current state: set()
+
+
+Prev. state:   {<0; 0>, <0; 1>, <0; 2>}
+Current state: {<1; 1>, <0; 1>, <-1; 1>}
+
+
+Prev. state:   {<1; 1>, <0; 1>, <-1; 1>}
+Current state: {<0; 0>, <0; 1>, <0; 2>}
+
+
+Prev. state:   {<0; 0>}
+Current state: set()
+
+
+Prev. state:   {<1; 1>, <0; 1>, <1; 0>, <0; 0>}
+Current state: {<0; 0>, <1; 0>, <0; 1>, <1; 1>}
+

@@ -1,0 +1,30 @@
+digraph "classes" {
+charset="utf-8"
+rankdir=BT
+"0" [label="{Application|field\lframe2\llabelX1\llabelX2\llabelY1\llabelY2\lmaster : NoneType\lquit\ltextX1\ltextX2\ltextY1\ltextY2\l|create_widgets()\lnext()\l}", shape="record"];
+"1" [label="{Button|\l|flash()\linvoke()\l}", shape="record"];
+"2" [label="{Cell|sort : NoneType\l|get_coords()\lget_neighbours()\l}", shape="record"];
+"3" [label="{Entry|select_adjust\lselect_clear\lselect_from\lselect_present\lselect_range\lselect_to\l|delete()\lget()\licursor()\lindex()\linsert()\lscan_dragto()\lscan_mark()\lselection_adjust()\lselection_clear()\lselection_from()\lselection_present()\lselection_range()\lselection_to()\l}", shape="record"];
+"4" [label="{Frame|\l|}", shape="record"];
+"5" [label="{Gui|max_x\lmax_y\lroot_x : int\lroot_y : int\lshift_x\lshift_y\luser_grid_size : int\l|draw()\lset_args()\l}", shape="record"];
+"6" [label="{Label|\l|}", shape="record"];
+"7" [label="{Widget|\l|}", shape="record"];
+"8" [label="{World|\l|get_cells()\lnext_state()\lset_cells()\lupdate_stete()\l}", shape="record"];
+"9" [label="{XView|\l|xview()\lxview_moveto()\lxview_scroll()\l}", shape="record"];
+"0" -> "4" [arrowhead="empty", arrowtail="none"];
+"1" -> "7" [arrowhead="empty", arrowtail="none"];
+"3" -> "7" [arrowhead="empty", arrowtail="none"];
+"3" -> "9" [arrowhead="empty", arrowtail="none"];
+"4" -> "7" [arrowhead="empty", arrowtail="none"];
+"6" -> "7" [arrowhead="empty", arrowtail="none"];
+"1" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="quit", style="solid"];
+"3" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="textX1", style="solid"];
+"3" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="textX2", style="solid"];
+"3" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="textY2", style="solid"];
+"3" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="textY1", style="solid"];
+"4" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="frame2", style="solid"];
+"6" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="labelY2", style="solid"];
+"6" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="labelX2", style="solid"];
+"6" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="labelX1", style="solid"];
+"6" -> "0" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="labelY1", style="solid"];
+}

@@ -1,0 +1,8 @@
+digraph "packages" {
+charset="utf-8"
+rankdir=BT
+"0" [label="/home/sid1057/Projects/life/modules/cell.py", shape="box"];
+"1" [label="/home/sid1057/Projects/life/modules/gui.py", shape="box"];
+"2" [label="/home/sid1057/Projects/life/modules/world.py", shape="box"];
+"3" [label="app", shape="box"];
+}
