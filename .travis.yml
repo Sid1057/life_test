@@ -1,0 +1,20 @@
+language: python
+
+python:
+    - "3.5"
+    - "3.6"
+
+before_install:
+    - sudo apt-get update
+    - sudo apt-get install python3-pip
+    - pip3 install virtualenv
+    - virtualenv env
+    - source env/bin/activate
+
+install:
+    - sudo apt-get install python3-tk
+    - pip3 install -r requirements.txt
+
+script: python3 run_tests.py
+
+after_failure: echo "Test failed"
