@@ -15,7 +15,7 @@ install:
     - sudo apt-get install python3-tk
     - pip3 install -r requirements.txt
 
-script: python3 cell_test.py  # run_tests.py
+script: python3 run_tests.py
 
 after_failure: echo "Test failed"
 after_success:
