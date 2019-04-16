@@ -32,7 +32,7 @@ class Cell:
 
     def __str__(self):
         'Magic method for string representation'
-        return '<{}; {}>'.format(self.__x, self.__y)
+        return '<{}; {} ({})>'.format(self.__x, self.__y, self.sort)
 
     def __repr__(self):
         'Magic method for pretty printing'

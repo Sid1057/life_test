@@ -17,12 +17,6 @@ class Gui:
         self.__width = width
         self.__height = height
 
-        # cv.createTrackbar('shift_x', 'params', 0, 500, nothing)
-        # cv.createTrackbar('shift_y', 'params', 0, 500, nothing)
-        # cv.createTrackbar('max_x', 'params', 0, 500, nothing)
-        # cv.createTrackbar('max_y', 'params', 0, 500, nothing)
-        # cv.createTrackbar('grid_size', 'params', 0, 50, nothing)
-
     def set_args(self,
             shift_x,
             shift_y,
@@ -42,11 +36,19 @@ class Gui:
         assert isinstance(world, World)
 
         alived = world.get_cells()
+        alived = set(alived)
         user_grid_size = 10
         shift_x = self.shift_x
         shift_y = self.shift_y
         max_x = self.max_x
         max_y = self.max_y
+
+        assert(max_x > 0)
+        assert(max_y > 0)
+        assert(isinstance(shift_x, int))
+        assert(isinstance(shift_y, int))
+        assert(isinstance(max_x, int))
+        assert(isinstance(max_y, int))
 
         self.__grid_size = user_grid_size
         self.__height = self.__grid_size * max_y
@@ -87,4 +89,5 @@ class Gui:
                 field = cv.line(field, (0, y), (self.__width, y), 0)
 
         cv.imshow('field', field)
-        return cv.waitKey(100)
+        key = cv.waitKey(100)
+        return key != ord('q')

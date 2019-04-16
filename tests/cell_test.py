@@ -20,6 +20,7 @@ class Test_cell(unittest.TestCase):
 
         self.assertEqual(zero_cell, another_zero_cell)
         self.assertNotEqual(zero_cell, non_zero_cell)
+        self.assertNotEqual(zero_cell, 0)
         self.assertNotEqual(zero_cell, another_non_zero_cell)
         self.assertNotEqual(another_zero_cell, non_zero_cell)
         self.assertNotEqual(another_zero_cell, another_non_zero_cell)

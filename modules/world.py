@@ -5,23 +5,31 @@ class World():
     'Class of the field of the game. Collect all alived cells.'
     def __init__(self, cells=[]):
         'Simple constructor of initial state'
-        assert all(isinstance(cell, Cell) for cell in cells)
+        cells = set(cells)
+        assert all(
+            isinstance(cell, Cell) for cell in cells)
         self.__cells = cells
+
         World.step = 0
 
     def set_cells(self, cells):
         'Setter of alived cells'
-        assert all(isinstance(cell, Cell) for cell in cells)
+        cells = set(cells)
+        assert all(
+            isinstance(cell, Cell) for cell in cells)
+
         self.__cells = set(cells)
 
     def get_cells(self):
         'Getter of alived cells'
+        self.__cells = set(self.__cells)
         return self.__cells
 
     @staticmethod
     def update_stete(cells):
         'Static method of updating the state of the world'
-        assert all(isinstance(cell, Cell) for cell in cells)
+        assert all(
+            isinstance(cell, Cell) for cell in cells)
 
         # create containers of alived cells and possible alived cells
         alive_cells = cells
@@ -30,8 +38,10 @@ class World():
         # fill container of possible alived cells
         for cell in cells:
             neighbours += cell.get_neighbours()
-        neighbours += [cell for cell in alive_cells]
-        neighbours = {cell for cell in neighbours}
+        neighbours += [
+            cell for cell in alive_cells]
+        neighbours = {
+            cell for cell in neighbours}
 
         # create container of really alived cells
         result = []
@@ -126,7 +136,8 @@ class World():
                     continue
 
         # return alived cells as a set
-        return {cell for cell in result}
+        return {
+            cell for cell in result}
 
     def next_state(self):
         'Method of evaluating the game\'s state'

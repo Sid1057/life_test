@@ -43,12 +43,12 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
 
-    def create_widgets(self):
-        # self.hi_there = tk.Button(self)
-        # self.hi_there["text"] = "Hello World\n(click me)"
-        # self.hi_there["command"] = self.say_hi
-        # self.hi_there.pack(side="top")
+        self.textX1.insert(0,'0')
+        self.textX2.insert(0,'0')
+        self.textY1.insert(0,'0')
+        self.textY2.insert(0,'0')
 
+    def create_widgets(self):
         self.field = np.zeros((400, 400, 3), dtype=np.uint8)
         height, width, channels = self.field.shape
 
@@ -68,7 +68,7 @@ class Application(tk.Frame):
         self.labelY1=tk.Label(self.frame2,text='Y1',font='Arial 14')
         self.labelY1.place(x='170', y='50')
 
-        # смещение по горизонтали
+        
         self.textX2=tk.Entry(self.frame2,width=10,font='Arial 14')
         self.textX2.place(x='0', y='100')
         self.labelX2=tk.Label(self.frame2,text='X2',font='Arial 14')
@@ -85,13 +85,18 @@ class Application(tk.Frame):
             command=self.next)
         self.quit.place(x='0', y='350')
 
-    def next(self):
-        print("hi there, everyone!")
-        root.update()
+    def update_borders(self):
         max_x = int(self.textX1.get())
         max_y = int(self.textY1.get())
         root_x = int(self.textX2.get())
         root_y = int(self.textY2.get())
+
+    def next(self, root_mode=True):
+        print("hi there, everyone!")
+        if (root_mode):
+            root.update()
+
+        self.update_borders()
 
         gui.set_args(10, 10, max_x, max_y, root_x, root_y)
         gui.draw(world)
@@ -101,11 +106,3 @@ root = tk.Tk()
 app = Application(master=root)
 app.mainloop()
 i = 0
-#while True:
-#    print('step {}'.format(i))
-#    key = gui.draw(world)
-#
-#    if key == ord('q'):
-#        exit()
-#
-#    world.next_state()
