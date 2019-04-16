@@ -20,3 +20,4 @@ script: python3 run_tests.py
 after_failure: echo "Test failed"
 after_success:
   - coveralls
+  - coverage report -m modules/*.py
