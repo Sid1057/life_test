@@ -15,10 +15,10 @@ install:
     - sudo apt-get install python3-tk
     - pip3 install -r requirements.txt
 
-script: python3 cell_tests.py  # run_tests.py
+script: python3 cell_test.py  # run_tests.py
 
 after_failure: echo "Test failed"
 after_success:
   - coverage combine
-  - coverage run cell_tests.py
+  - coverage run cell_test.py
   - coverage report -m modules/*.py
