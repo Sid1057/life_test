@@ -19,5 +19,6 @@ script: python3 run_tests.py
 
 after_failure: echo "Test failed"
 after_success:
-  - coveralls
+  - coverage combine
+  - coverage run cell_tests.py
   - coverage report -m modules/*.py
