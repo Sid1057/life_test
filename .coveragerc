@@ -1,8 +1,2 @@
 [run]
-omit =
-    tests*
-
-[report]
-omit =
-    modules/*
-    app.py
+    branch = True
